@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+</head>
+<body>
+<script>
+    class Person{
+        static test(){
+            console.log('类的静态方法');
+        }
+        constructor(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        show(){
+            console.log(this.name,this.age);
+        }
+
+    }
+    Person.test();
+    let person1=new Person('sun',22);
+    console.log(person1);
+    person1.show();
+
+    class ChildPerson extends Person{
+        constructor(name,age,sex){
+            super(name,age);
+            this.sex=sex;
+        }
+        show(){
+            console.log(this.name,this.age,this.sex);
+        }
+    }
+    let childPerson=new ChildPerson('sun',22,'男');
+    console.log(childPerson);
+    childPerson.show();
+</script>
+</body>
+</html>

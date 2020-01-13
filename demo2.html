@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol</title>
+</head>
+<body>
+<script>
+    let symbol=Symbol('one');
+    let symbol2=Symbol('two');
+    console.log(symbol);
+    console.log(symbol2);
+    console.log(symbol===symbol2);
+    console.log(typeof symbol);
+
+    let obj={
+        name:'kebo',
+        age:42
+    }
+    obj[Symbol.iterator]=function () {
+
+    }
+    let arr=[1,3,35,6,7];
+    console.log(arr);
+    console.log(obj);
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise对象</title>
+</head>
+<body>
+<script>
+    let promise=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let msg='任务1执行成功，接头暗号';
+            resolve(msg);
+            console.log(promise);
+        },2000)
+    });
+    console.log(promise);
+
+    let num=0;
+    function util(){
+        num++;
+        let promise=new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve(`第${num}次异步任务`);
+            },2000)
+        });
+        return promise;
+    }
+    util()
+        .then((result)=>{
+        if(result){
+            return util();
+        }
+    },(error)=>{
+
+        })
+        .then((result)=>{
+            console.log('成功了')
+        },(error)=>{
+            // console.log('失败了')
+        })
+</script>
+</body>
+</html>
